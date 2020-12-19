@@ -1,0 +1,50 @@
+package ClassArr;
+
+import java.util.Scanner;
+
+class Tick {
+	int [] line = new int [3];
+	
+	void prinLine() {
+		for(int i=0; i<line.length;i++) {
+			if(line[i] == 0) {
+				System.out.print(" [ ] ");
+			}else if(line [i] == 1) {
+				System.out.print(" [X] ");
+			}else if(line[i] == 2) {
+				System.out.print(" [O] ");
+			}
+		}
+		System.out.println();
+	}
+}
+public class Class05 {
+	public static void main(String[] args) {
+		boolean run = true;
+		Tick [] game = new Tick[3];
+		for(int i=0; i<game.length;i++) {
+			game[i] = new Tick(); // 제일 많이 실수를 한다 고러 제일 중요하다. 
+		}
+		Scanner scan = new Scanner(System.in);
+		boolean check = true;
+		while(run) {
+			for(int i=0; i<game.length;i++) {
+				game[i].prinLine();
+			}
+			System.out.println();
+			System.out.println("X의 좌표를 입력하세요 : ");
+			int x = scan.nextInt()-1;
+			System.out.println("Y의 좌표를 입력하세요 : ");
+			int y = scan.nextInt()-1;
+			
+			if(check == true && game[y].line[x] == 0) {
+				game[y].line[x] =1;
+				check = false;
+			}else {
+				game[y].line[x] = 2;
+				check = true;
+			}
+		}
+		
+	}
+}
