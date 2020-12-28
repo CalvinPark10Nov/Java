@@ -1,5 +1,12 @@
 package ClassArr02;
-
+class Subject{
+	String name;
+	int score;
+}
+class Student{
+	Subject [] subjects;
+	String name;
+}
 import java.util.Scanner;
 
 public class ClassArr_StudentEdit {
